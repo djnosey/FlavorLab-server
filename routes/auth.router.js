@@ -20,7 +20,7 @@ router.post("/signup", isNotLoggedIn, validationLogin, (req, res, next) => {
     .then((foundUser) => {
       if (foundUser) {
         // If username is already taken, then return error response
-        return next(createError(400)); // Bad Request
+        return next(createError(401)); // Bad Request
       } else {
         // If username is available, go and create a new user
         const salt = bcrypt.genSaltSync(saltRounds);
