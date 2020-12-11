@@ -29,7 +29,7 @@ router.put("/:id", (req, res, next) => {
 
 router.delete("/:id", (req, res, next) => {
   const { id } = req.params;
-  User.findByIdAndDelete(id).then((deleted) => {
+  User.findByIdAndDelete(id).then(() => {
     req.session.destroy(function (err) {
       if (err) {
         return next(err);
