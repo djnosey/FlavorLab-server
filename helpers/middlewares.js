@@ -20,9 +20,3 @@ exports.validationLogin = (req, res, next) => {
   } else next();
 };
 
-// Above exporting is same as what we did before:
-// exports = {
-//   isLoggedIn,
-//   isNotLoggedIn,
-//   validationLogin,
-// }
